@@ -1,0 +1,37 @@
+﻿@model  List<PetGrooming.Models.Species>
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add a New Pet</h2>
+
+<form method="POST" action="/Pet/Add">
+    <!-- TODO: format this nicely -->
+    <div><span class="addPet_label">Name:</span><input id="PetName" type="text" name="PetName" /></div>
+    <div>
+        <span class="addPet_label">Species:</span>
+        <select id="SpeciesID" type="text" name="SpeciesID">
+            @{ 
+                //A rendering loop for presenting a list of species
+                //The pet should be one of these species
+                foreach(var species in Model)
+                {
+                    <option value="@species.SpeciesID">@species.Name</option>
+
+                }
+            }
+        </select>
+    </div>
+    <div>
+        <span class="addPet_label">Weight:</span><input id="petWeight" type="text" name="petWeight" />
+    </div>
+    <div>
+        <span class="addPet_label">Color:</span><input id="petColor" type="text" name="petColor" />
+    </div>
+    <div>
+        <span class="addPet_label">Notes:</span>
+        <textarea id="petNotes" name="petNotes">
+        </textarea>
+    </div>
+    <input type="submit" value="Add Pet" class="addPet_btn">
+</form>

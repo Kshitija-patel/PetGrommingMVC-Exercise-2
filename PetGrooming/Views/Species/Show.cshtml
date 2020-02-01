@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show Species Details</h2>
+
+<a href="/Species/List" class="s_back">Back to List</a>
+<a href="/Species/Update/@Model.SpeciesID">Update</a>
+<div class="showSpecies_details">
+    <div>ID: @Model.SpeciesID</div>
+    <div>Name: @Model.Name</div>
+</div>
+
+
